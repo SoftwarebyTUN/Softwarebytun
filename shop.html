@@ -1,0 +1,18 @@
+<h2>🛒 Point Shop</h2>
+<p>Wave 1,000 MMK - 50 Points</p>
+<p>Kbz  1,000 MMK - 50 Points</p>
+<button onclick="redeem(50)">Redeem</button>
+
+<script>
+let p = localStorage.getItem("point") || 0;
+
+function redeem(cost){
+ if(p >= cost){
+  p -= cost;
+  localStorage.setItem("point",p);
+  alert("Redeem request sent");
+ }else{
+  alert("Not enough points");
+ }
+}
+</script>
